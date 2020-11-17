@@ -1,0 +1,24 @@
+Write a program that divides units of work into subunits for fast, efficient concurrent processing:
+
+given a class MyRecursiveAction which extends java.util.concurrent.RecursiveAction;
+given a String myString of any length and character composition; and 
+given a static final int THRESHOLD to denote the point at which to spawn new threads; 
+if over THRESHOLD, split myString into a List of MyRecursiveAction instances to process those substrings;
+where "process" means to reverse the substring (e.g.: "subString123" becomes "321gnirtSbus").
+
+Input:
+
+a String of any length and any character composition (upper, lower, special, alpha, numeric)
+
+Output: 
+
+a log entry at info level each time you decide to split myString for processing; and 
+a log entry at info level calling out which thread processed the work after the split
+a log entry at info level showing the processed substring as a series of hashtags
+
+Where appropriate, we expect to see the following in your solution:
+
+java.util.concurrent.RecursiveAction
+java.util.concurrent.ForkJoinTask
+java.lang.Thread.currentThread()
+java.util.logging.Logger
